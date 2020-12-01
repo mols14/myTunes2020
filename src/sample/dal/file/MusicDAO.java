@@ -1,4 +1,4 @@
-package sample.dal;
+package sample.dal.file;
 
 public class MusicDAO {
 }
