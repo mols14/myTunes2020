@@ -8,7 +8,7 @@ public class Song {
     private StringProperty title;
     private StringProperty artist;
     private final int id;
-    private final double time;
+    private final float time;
 
     public Song(String title, String artist, int id, double time) {
         this.title = new SimpleStringProperty(title);
@@ -34,7 +34,7 @@ public class Song {
         return id;
     }
 
-    public double getTime() {
+    public float getTime() {
         return time;
     }
 }
