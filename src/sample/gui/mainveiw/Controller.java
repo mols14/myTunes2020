@@ -44,4 +44,9 @@ public class Controller {
     void closeButtom(){
         //TODO
     }
+
+    /**
+     *   close the program
+     */
+
 }
