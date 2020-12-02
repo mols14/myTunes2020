@@ -9,7 +9,7 @@ public class Controller {
      * @param song
      *
      */
-    void playStop (Song song){
+    void playStopbm (Song song){
         //TODO
     }
 
@@ -33,7 +33,7 @@ public class Controller {
      * take the input from the searchinput and show the result.
      */
 
-    void searchButtom(String Searchinput){
+    void searchBm(String Searchinput){
         //TODO
     }
 
@@ -41,12 +41,90 @@ public class Controller {
      *   close the program
      */
 
-    void closeButtom(){
+    void closeBm(){
         //TODO
     }
 
     /**
-     *   close the program
+     *  open the new playlist view
      */
+
+    void newPlistBm(){
+        //TODO  hvad er input når den skal åbne et nyt veiw?
+    }
+
+    /**
+     *   take the selected playlist so you can edit it.
+     */
+
+    void editPlistBm(){
+        //TODO åbner det her også nyt view
+    }
+
+    /**
+     *   delete the selected playlist - with a confirm ?
+     */
+
+    void deletePlistBm() {
+        //TODO
+    }
+
+    /**
+     *   swap the selected song with the one over it.
+     *   so the selected song move up
+     */
+
+
+    void upSongBm() {
+        //TODO
+    }
+
+    /**
+     *   swap the selected song with the one under it.
+     *   so the selected song move down
+     */
+
+    void downSongBm() {
+        //TODO
+    }
+
+    /**
+     *   delete song on playlist.
+     */
+
+    void deleteSongOnPList() {
+        //TODO
+    }
+
+    /**
+     * move selceted song to the playlist
+     */
+
+    void moveSongToPL() {
+        //TODO
+    }
+
+    /**
+     * make a new song
+     */
+
+    void newSongBm() {
+        //TODO
+    }
+
+    /**
+     * edit selected song
+     */
+
+    void editSong() {
+        //TODO
+    }
+    /**
+     * delete selected song
+     */
+
+    void deleteSongBm() {
+        //TODO
+    }
 
 }
