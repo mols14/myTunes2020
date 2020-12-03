@@ -10,7 +10,7 @@ public class Song {
     private final int id;
     private final float time;
 
-    public Song(String title, String artist, int id, double time) {
+    public Song(String title, String artist, int id, float time) {
         this.title = new SimpleStringProperty(title);
         this.artist = new SimpleStringProperty(artist);
         this.id = id;
