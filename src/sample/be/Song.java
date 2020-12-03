@@ -17,17 +17,20 @@ public class Song {
         this.time = time;
     }
 
-    public String getTitle() { return title.get();
+    public String getTitle() {
+        return title.get();
     }
 
     public void setTitle(String title) {
         this.title.set(title);
     }
 
-    public String getArtist() {return artist.get();
+    public String getArtist() {
+        return artist.get();
     }
 
-    public void setArtist(String artist) {this.artist.set(artist);
+    public void setArtist(String artist) {
+        this.artist.set(artist);
     }
 
     public int getId() {
