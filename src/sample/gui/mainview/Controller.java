@@ -1,15 +1,15 @@
-package sample.gui.mainveiw;
+package sample.gui.mainview;
 
 import sample.be.Song;
 
-public class Controller {
+public class Controller implements Initializable {
 
     /**
      * play/pause the selected song
      * @param song
      *
      */
-    void playStopbn (Song song){
+    public void playStopbn (Song song){
         //TODO
     }
 
@@ -17,7 +17,7 @@ public class Controller {
      * change where to play from. from the currently playing song.
      */
 
-    void songTimerBar(double time){
+    public void songTimerBar(double time){
         //TODO
     }
 
@@ -25,7 +25,7 @@ public class Controller {
      * change the volume of the songs playing from this Application
      */
 
-    void volume(Song song, double volume){
+    public void volume(Song song, double volume){
         //TODO
     }
 
@@ -33,7 +33,7 @@ public class Controller {
      * take the input from the searchinput and show the result.
      */
 
-    void searchBn(String Searchinput){
+    public void searchBn(String Searchinput){
         //TODO
     }
 
@@ -41,7 +41,7 @@ public class Controller {
      *   close the program
      */
 
-    void closeBn(){
+    public void closeBn(){
         //TODO
     }
 
@@ -49,7 +49,7 @@ public class Controller {
      *  open the new playlist view
      */
 
-    void newPlistBn(){
+    public void newPlistBn(){
         //TODO  hvad er input når den skal åbne et nyt veiw?
     }
 
@@ -57,7 +57,7 @@ public class Controller {
      *   take the selected playlist so you can edit it.
      */
 
-    void editPlistBn(){
+    public void editPlistBn(){
         //TODO åbner det her også nyt view
     }
 
@@ -65,7 +65,7 @@ public class Controller {
      *   delete the selected playlist - with a confirm ?
      */
 
-    void deletePlistBn() {
+    public void deletePlistBn() {
         //TODO
     }
 
@@ -75,7 +75,7 @@ public class Controller {
      */
 
 
-    void upSongBn() {
+    public void upSongBn() {
         //TODO
     }
 
@@ -84,7 +84,7 @@ public class Controller {
      *   so the selected song move down
      */
 
-    void downSongn() {
+    public void downSongn() {
         //TODO
     }
 
@@ -92,7 +92,7 @@ public class Controller {
      *   delete song on playlist.
      */
 
-    void deleteSongOnPList() {
+    public void deleteSongOnPList() {
         //TODO
     }
 
@@ -100,7 +100,7 @@ public class Controller {
      * move selceted song to the playlist
      */
 
-    void moveSongToPL() {
+    public void moveSongToPL() {
         //TODO
     }
 
@@ -108,7 +108,7 @@ public class Controller {
      * make a new song
      */
 
-    void newSongBn() {
+    public void newSongBn() {
         //TODO
     }
 
@@ -116,14 +116,14 @@ public class Controller {
      * edit selected song
      */
 
-    void editSong() {
+    public void editSong() {
         //TODO
     }
     /**
      * delete selected song
      */
 
-    void deleteSongBn() {
+    public void deleteSongBn() {
         //TODO
     }
 

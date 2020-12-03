@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.Properties;
 
-public class DatabaseCennector {
+public class DatabaseConnector {
 
 
         private static final String PROP_FILE = "database.settings";
         private SQLServerDataSource ds;
 
-        public DatabaseCennector() throws IOException
+        public DatabaseConnector() throws IOException
         {
             Properties databaseProperties = new Properties();
             databaseProperties.load(new FileInputStream(PROP_FILE));
