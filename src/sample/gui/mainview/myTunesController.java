@@ -34,7 +34,7 @@ public class myTunesController implements Initializable {
     @FXML
     private Slider volumeSlider;
     @FXML
-    private TextField displaySong;
+    private TextField displaySong; // er denne behøver vel ikke en methode ?
     @FXML
     private TextField searchField;
     @FXML
@@ -63,6 +63,58 @@ public class myTunesController implements Initializable {
     }
     public void dragVolumeSlider(){
         System.out.println("VolumeSlider is working");
+        //TODO
+    }
+    public void inputSearchField(){
+        System.out.println("SearchField is working");
+        //TODO
+    }
+    public void clickedNewPlayList(){
+        System.out.println("NewPlaylist Button is working");
+        //TODO
+    }
+    public void clickedEditPlaylist(){
+        System.out.println("EditPlaylist is working");
+        //TODO
+    }
+    public void clickedDeletePlaylist(){
+        System.out.println("DeletePlaylist is working");
+        //TODO
+    }
+    public void clickedMoveSongDown(){
+        System.out.println("MoveSongDown is working");
+        //TODO
+    }
+    public void clickedMoveSongUp(){
+        System.out.println("MoveSongUp is working");
+        //TODO
+    }
+    public void clickedDeleteSongOnPL(){
+        System.out.println("DeleteSongOnPL is working");
+        //TODO
+    }
+    public void clickedCloseApp(){
+        System.out.println("CloseApp is working");
+        //TODO
+    }
+    public void clickedNewSong(){
+        System.out.println("NewSong is working");
+        //TODO
+    }
+    public void clickedEditSong(){
+        System.out.println("editSong is working");
+        //TODO
+    }
+    public void clickedDeleteSong(){
+        System.out.println("DeleteSong is working");
+        //TODO
+    }
+    public void clickedSearchButton(){
+        System.out.println("SearchButton is working");
+        //TODO
+    }
+    public void clickedMoveSongToPL(){
+        System.out.println("MoveSongToPL is working");
         //TODO
     }
 }
