@@ -9,20 +9,20 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.newsong.newSongController">
    <children>
-      <Button fx:id="saveSong" layoutX="340.0" layoutY="254.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="272.0" layoutY="254.0" mnemonicParsing="false" text="Cancel" />
-      <Button layoutX="296.0" layoutY="199.0" mnemonicParsing="false" text="Choose" />
-      <Button layoutX="203.0" layoutY="124.0" mnemonicParsing="false" text="More" />
-      <TextField layoutX="77.0" layoutY="47.0" prefHeight="25.0" prefWidth="216.0" />
-      <TextField layoutX="77.0" layoutY="84.0" prefHeight="25.0" prefWidth="216.0" />
-      <TextField layoutX="77.0" layoutY="162.0" />
-      <TextField layoutX="77.0" layoutY="199.0" prefHeight="25.0" prefWidth="216.0" />
+      <Button fx:id="saveSong" layoutX="340.0" layoutY="254.0" mnemonicParsing="false" onAction="#clickedSaveSong" text="Save" />
+      <Button fx:id="newSongCancel" layoutX="272.0" layoutY="254.0" mnemonicParsing="false" onAction="#clickedNewSongCancel" text="Cancel" />
+      <Button fx:id="fileSongPathChooseButton" layoutX="296.0" layoutY="199.0" mnemonicParsing="false" onAction="#clickedFileSOngPathChooseBN" text="Choose" />
+      <Button fx:id="categoryMoreButton" layoutX="203.0" layoutY="124.0" mnemonicParsing="false" onAction="#clickedMoreCategoryBN" text="More" />
+      <TextField fx:id="titleSongInput" layoutX="77.0" layoutY="47.0" prefHeight="25.0" prefWidth="216.0" />
+      <TextField fx:id="artistSongInput" layoutX="77.0" layoutY="84.0" prefHeight="25.0" prefWidth="216.0" />
+      <TextField fx:id="timeSongInput" layoutX="77.0" layoutY="162.0" />
+      <TextField fx:id="songFilePathInput" layoutX="77.0" layoutY="199.0" prefHeight="25.0" prefWidth="216.0" />
       <Text layoutX="40.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" />
       <Text layoutX="38.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:" />
       <Text layoutX="18.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" />
       <Text layoutX="39.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" />
       <Text layoutX="43.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File:" />
-      <SplitMenuButton layoutX="77.0" layoutY="124.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0">
+      <SplitMenuButton fx:id="categoryFolder" layoutX="77.0" layoutY="124.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />

@@ -6,16 +6,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="214.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.newplaylist.NewPlaylistController">
    <children>
-      <TextField layoutX="106.0" layoutY="69.0" prefHeight="25.0" prefWidth="247.0" />
+      <TextField fx:id="nameInputField" layoutX="106.0" layoutY="69.0" prefHeight="25.0" prefWidth="247.0" />
       <Text layoutX="60.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button layoutX="237.0" layoutY="122.0" mnemonicParsing="false" text="Cancel" />
-      <Button layoutX="301.0" layoutY="122.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Save" />
+      <Button fx:id="cancelPlaylist" layoutX="237.0" layoutY="122.0" mnemonicParsing="false" onAction="#clickedCancelPL" text="Cancel" />
+      <Button fx:id="savePlaylist" layoutX="301.0" layoutY="122.0" mnemonicParsing="false" onAction="#clickedSavePL" prefHeight="25.0" prefWidth="51.0" text="Save" />
    </children>
 </AnchorPane>
