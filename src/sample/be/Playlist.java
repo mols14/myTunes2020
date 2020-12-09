@@ -39,16 +39,51 @@ public class Playlist
         return title;
     }
 
+
+    /**
+     * gets the title
+     *
+     * @return titleproperty
+     */
     public StringProperty getTitleProperty() {
         return titleProperty;
     }
 
+    /**
+     * gets the song list
+     *
+     * @return the song list
+     */
     public ObservableList<Song> getSongs() {
         return songs;
     }
 
+    /**
+     * sets the value of title
+     *
+     * @param title
+     */
     public void setTitle(String title) {
         this.title = title;
         titleProperty.setValue(title);
     }
+
+    /**
+     * Adds a song to playlist
+     *
+     * @param song
+     */
+    public void addToPlaylist(Song song) {
+        songs.add(song);
+    }
+
+    /**
+     * Removes a song from a playlist
+     *
+     * @param song
+     */
+    public void removeFromPlaylist(Song song) {
+        songs.remove(song);
+    }
+
 }

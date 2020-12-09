@@ -5,11 +5,11 @@ import sample.be.Song;
 import java.io.IOException;
 import java.sql.*;
 
-public class MusicDAO {
+public class SongDAO {
 
     private final JDBCConnectionPool connectionPool;
 
-    public MusicDAO() throws IOException
+    public SongDAO() throws IOException
     {
         connectionPool = JDBCConnectionPool.getInstance();
     }

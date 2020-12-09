@@ -8,15 +8,20 @@ public class Song {
     private StringProperty title;
     private StringProperty artist;
     private final int id;
-    private final float time;
+    private final float duration;
 
-    public Song(String title, String artist, int id, float time) {
+    public Song(String title, String artist, int id, float duration) {
         this.title = new SimpleStringProperty(title);
         this.artist = new SimpleStringProperty(artist);
         this.id = id;
-        this.time = time;
+        this.duration = duration;
     }
 
+    /**
+     * gets and set the title of a song
+     *
+     * @return
+     */
     public String getTitle() {
         return title.get();
     }
@@ -25,6 +30,10 @@ public class Song {
         this.title.set(title);
     }
 
+    /**
+     * gets and set the name of the artist of a song
+     * @return
+     */
     public String getArtist() {
         return artist.get();
     }
@@ -33,11 +42,21 @@ public class Song {
         this.artist.set(artist);
     }
 
+    /**
+     * gets the id of a song
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
-    public float getTime() {
-        return time;
+    /**
+     * gets the duration of a song
+     *
+     * @return
+     */
+    public float getDuration() {
+        return duration;
     }
 }

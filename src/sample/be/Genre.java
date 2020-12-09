@@ -13,6 +13,11 @@ public class Genre {
         this.genre = new SimpleStringProperty(genre);
     }
 
+    /**
+     * gets the id of the genre
+     *
+     * @return
+     */
     public int getId() { return id; }
 
     public String getGenre() {
