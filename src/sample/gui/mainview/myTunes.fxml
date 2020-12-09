@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.mainview.myTunesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.mainview.Controller">
    <children>
       <TableView layoutX="22.0" layoutY="89.0" prefHeight="322.0" prefWidth="170.0">
         <columns>
@@ -25,38 +25,34 @@
             <TableColumn prefWidth="75.0" text="Time" />
         </columns>
       </TableView>
-      <Slider fx:id="volumeSlider" layoutX="47.0" layoutY="47.0" onDragDetected="#dragVolumeSlider" prefHeight="14.0" prefWidth="120.0" />
-      <Button fx:id="newPlaylist" layoutX="30.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedNewPlayList" text="New" />
-      <Button fx:id="editPlaylist" layoutX="81.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedEditPlaylist" text="Edit" />
-      <Button fx:id="deletePlaylist" layoutX="134.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedDeletePlaylist" text="Delete" />
-      <Button fx:id="moveSongDown" layoutX="246.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedMoveSongDown" prefHeight="17.0" prefWidth="30.0" text="⬇" />
-      <Button fx:id="moveSongUp" layoutX="207.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedMoveSongUp" prefHeight="25.0" prefWidth="30.0" text="⬆" />
-      <Button fx:id="deleteSongOnPL" layoutX="285.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedDeleteSongOnPL" prefHeight="25.0" prefWidth="51.0" text="Delete" />
-      <Button fx:id="closeApp" layoutX="606.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedCloseApp" text="Close" />
-      <Button fx:id="newSong" layoutX="373.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedNewSong" text="New" />
-      <Button fx:id="editSong" layoutX="421.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedEditSong" text="Edit" />
-      <Button fx:id="deleteSong" layoutX="464.0" layoutY="425.0" mnemonicParsing="false" onAction="#clickedDeleteSong" text="Delete" />
+      <Slider layoutX="47.0" layoutY="47.0" prefHeight="14.0" prefWidth="120.0" />
+      <Button layoutX="30.0" layoutY="425.0" mnemonicParsing="false" text="New" />
+      <Button layoutX="81.0" layoutY="425.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="134.0" layoutY="425.0" mnemonicParsing="false" text="Delete" />
+      <Button layoutX="246.0" layoutY="425.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" text="⬇" />
+      <Button layoutX="207.0" layoutY="425.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="⬆" />
+      <Button layoutX="285.0" layoutY="425.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Delete" />
+      <Button layoutX="606.0" layoutY="425.0" mnemonicParsing="false" text="Close" />
+      <Button layoutX="373.0" layoutY="425.0" mnemonicParsing="false" text="New" />
+      <Button layoutX="421.0" layoutY="425.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="464.0" layoutY="425.0" mnemonicParsing="false" text="Delete" />
       <TableView layoutX="207.0" layoutY="89.0" prefHeight="322.0" prefWidth="120.0">
         <columns>
           <TableColumn prefWidth="140.00001525878906" />
         </columns>
       </TableView>
-      <Button fx:id="moveSongToPL" layoutX="339.0" layoutY="89.0" mnemonicParsing="false" onAction="#clickedMoveSongToPL" prefHeight="25.0" prefWidth="30.0" text="⬅" />
+      <Button layoutX="339.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="⬅" />
       <Text layoutX="28.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" />
       <Text layoutX="211.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs on Playlists" />
       <Text layoutX="382.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs" />
       <Text layoutX="466.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filer" />
-      <TextField fx:id="searchField" layoutX="500.0" layoutY="29.0" onAction="#inputSearchField" prefHeight="25.0" prefWidth="112.0" />
-      <Button fx:id="searchButton" layoutX="626.0" layoutY="29.0" mnemonicParsing="false" onAction="#clickedSearchButton" prefHeight="25.0" prefWidth="30.0" text="🔍" />
-      <Button fx:id="musicPlayPause" layoutX="91.0" layoutY="16.0" mnemonicParsing="false" onAction="#clickedMusicPlayPause" prefHeight="25.0" prefWidth="32.0" text="▶" />
-      <Button fx:id="musicRewind" layoutX="55.0" layoutY="16.0" mnemonicParsing="false" onAction="#clickedMusicRewind" prefHeight="17.0" prefWidth="30.0" text="⏪" />
-      <Button fx:id="musicForward" layoutX="134.0" layoutY="16.0" mnemonicParsing="false" onAction="#clickedMusicForward" prefHeight="25.0" prefWidth="30.0" text="⏩" />
+      <TextField layoutX="500.0" layoutY="29.0" prefHeight="25.0" prefWidth="112.0" />
+      <Button layoutX="626.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="🔍" />
+      <Button fx:id="musicPlayPause" layoutX="91.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="32.0" text="⏯" />
+      <Button fx:id="musicRewind" layoutX="55.0" layoutY="16.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" text="⏪" />
+      <Button fx:id="musicForward" layoutX="134.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="⏩" />
       <Text layoutX="30.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="🔊" wrappingWidth="15.33331298828125" />
-<<<<<<< HEAD
       <TextField editable="false" layoutX="234.0" layoutY="34.0" prefHeight="25.0" prefWidth="120.0" />
-=======
-      <TextField fx:id="displaySong" layoutX="237.0" layoutY="33.0" prefHeight="25.0" prefWidth="120.0" />
->>>>>>> parent of 39d22ac... a
       <Text layoutX="367.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Is Playing" />
    </children>
 </AnchorPane>
