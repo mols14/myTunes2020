@@ -14,7 +14,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button fx:id="cancelPlaylist" layoutX="237.0" layoutY="122.0" mnemonicParsing="false" onAction="#clickedCancelPL" text="Cancel" />
-      <Button fx:id="savePlaylist" layoutX="301.0" layoutY="122.0" mnemonicParsing="false" onAction="#clickedSavePL" prefHeight="25.0" prefWidth="51.0" text="Save" />
+      <Button fx:id="savePlaylist" layoutX="208.0" layoutY="122.0" mnemonicParsing="false" onAction="#clickedSavePL" prefHeight="25.0" prefWidth="70.0" text="Save" />
+      <Button fx:id="cancelPlaylist" layoutX="282.0" layoutY="122.0" mnemonicParsing="false" onAction="#clickedCancelPL" prefHeight="25.0" prefWidth="70.0" text="Cancel" />
    </children>
 </AnchorPane>

@@ -26,14 +26,14 @@
         </columns>
       </TableView>
       <Slider layoutX="47.0" layoutY="47.0" prefHeight="14.0" prefWidth="120.0" />
-      <Button layoutX="30.0" layoutY="425.0" mnemonicParsing="false" text="New" />
+      <Button fx:id="newPlaylist" layoutX="30.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleNewPlaylist" text="New" />
       <Button layoutX="81.0" layoutY="425.0" mnemonicParsing="false" text="Edit" />
       <Button layoutX="134.0" layoutY="425.0" mnemonicParsing="false" text="Delete" />
       <Button layoutX="246.0" layoutY="425.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" text="⬇" />
       <Button layoutX="207.0" layoutY="425.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="⬆" />
       <Button layoutX="285.0" layoutY="425.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Delete" />
       <Button layoutX="606.0" layoutY="425.0" mnemonicParsing="false" text="Close" />
-      <Button layoutX="373.0" layoutY="425.0" mnemonicParsing="false" text="New" />
+      <Button fx:id="newSongBtn" layoutX="373.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleNewSong" text="New" />
       <Button layoutX="421.0" layoutY="425.0" mnemonicParsing="false" text="Edit" />
       <Button layoutX="464.0" layoutY="425.0" mnemonicParsing="false" text="Delete" />
       <TableView layoutX="207.0" layoutY="89.0" prefHeight="322.0" prefWidth="120.0">

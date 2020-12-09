@@ -1,15 +1,22 @@
 package sample.gui.mainview;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class myTunesController implements Initializable {
+public class  myTunesController implements Initializable {
 
     @FXML
     private Button deleteSong;
@@ -69,10 +76,7 @@ public class myTunesController implements Initializable {
         System.out.println("SearchField is working");
         //TODO
     }
-    public void clickedNewPlayList(){
-        System.out.println("NewPlaylist Button is working");
-        //TODO
-    }
+
     public void clickedEditPlaylist(){
         System.out.println("EditPlaylist is working");
         //TODO
@@ -97,10 +101,6 @@ public class myTunesController implements Initializable {
         System.out.println("CloseApp is working");
         //TODO
     }
-    public void clickedNewSong(){
-        System.out.println("NewSong is working");
-        //TODO
-    }
     public void clickedEditSong(){
         System.out.println("editSong is working");
         //TODO
@@ -116,5 +116,22 @@ public class myTunesController implements Initializable {
     public void clickedMoveSongToPL(){
         System.out.println("MoveSongToPL is working");
         //TODO
+    }
+
+    public void handleNewPlaylist(javafx.event.ActionEvent event) throws IOException {
+
+        Parent Playlist = FXMLLoader.load(getClass().getResource("/sample/gui/newplaylist/newPlaylist.fxml"));
+        Scene NewPlaylist = new Scene(Playlist); // Opretter den nye scene
+        Stage mainWindowStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        mainWindowStage.setScene(NewPlaylist); // Vælger den nyoprettede scene
+        mainWindowStage.show(); // Viser den nye scene
+    }
+
+    public void handleNewSong(ActionEvent actionEvent) throws IOException {
+        Parent myTunes = FXMLLoader.load(getClass().getResource("/sample/gui/newsong/newSong.fxml"));
+        Scene newSong = new Scene(myTunes); // Opretter den nye scene
+        Stage mainWindowStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        mainWindowStage.setScene(newSong); // Vælger den nyoprettede scene
+        mainWindowStage.show(); // Viser den nye scene
     }
 }
