@@ -13,11 +13,11 @@ public class Genre {
         this.genre = new SimpleStringProperty(genre);
     }
 
-    public int getId() { return id;
-    }
+    public int getId() { return id; }
 
     public String getGenre() {
         return genre.get();
     }
+
     public void setGenre(String genre){ this.genre.set(genre);}
 }

@@ -9,10 +9,12 @@ import javafx.stage.Stage;
 public class Main extends Application {
 private static int bredde = 700;
 private static int højde = 480;
+
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("gui/mainview/myTunes.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("MyTunes");
         primaryStage.setScene(new Scene(root, bredde, højde));
         primaryStage.show();
     }
