@@ -15,6 +15,7 @@ public class Song {
         this.artist = new SimpleStringProperty(artist);
         this.id = id;
         this.duration = duration;
+        // TO DO opret genre
     }
 
     /**

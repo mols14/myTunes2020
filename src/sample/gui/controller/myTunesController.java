@@ -1,4 +1,4 @@
-package sample.gui.mainview;
+package sample.gui.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -120,7 +120,7 @@ public class  myTunesController implements Initializable {
 
     public void handleNewPlaylist(javafx.event.ActionEvent event) throws IOException {
 
-        Parent Playlist = FXMLLoader.load(getClass().getResource("/sample/gui/newplaylist/newPlaylist.fxml"));
+        Parent Playlist = FXMLLoader.load(getClass().getResource("/sample/gui/view/newPlaylist.fxml"));
         Scene NewPlaylist = new Scene(Playlist); // Opretter den nye scene
         Stage mainWindowStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         mainWindowStage.setScene(NewPlaylist); // Vælger den nyoprettede scene
@@ -128,7 +128,7 @@ public class  myTunesController implements Initializable {
     }
 
     public void handleNewSong(ActionEvent actionEvent) throws IOException {
-        Parent myTunes = FXMLLoader.load(getClass().getResource("/sample/gui/newsong/newSong.fxml"));
+        Parent myTunes = FXMLLoader.load(getClass().getResource("/sample/gui/view/newSong.fxml"));
         Scene newSong = new Scene(myTunes); // Opretter den nye scene
         Stage mainWindowStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         mainWindowStage.setScene(newSong); // Vælger den nyoprettede scene
