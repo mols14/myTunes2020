@@ -11,5 +11,7 @@
     <orderEntry type="library" name="mssql-jdbc-8.4.1.jre14" level="project" />
     <orderEntry type="library" name="javafx-media-15-ea+1" level="project" />
     <orderEntry type="library" name="javafx-media-15-ea+1-win" level="project" />
+    <orderEntry type="library" name="org.openjfx:javafx-media:16-ea+4" level="project" />
+    <orderEntry type="library" name="org.openjfx:javafx-media:15-ea+6" level="project" />
   </component>
 </module>

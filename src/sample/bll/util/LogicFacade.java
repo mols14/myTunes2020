@@ -3,6 +3,7 @@ package sample.bll.util;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 
 
 
@@ -15,7 +16,8 @@ public class LogicFacade {
     }
 
     public void playSong() {
-        String filePath = "C:/Users/Svend Halding/Desktop/New folder/songs/Black.mp3";
+        File file = new File("C:/Users/Svend Halding/Desktop/New folder/songs/Black.mp3");
+        String filePath = file.toURI().toString();
         Media media = new Media(filePath);
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();

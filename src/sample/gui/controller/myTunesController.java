@@ -11,12 +11,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.gui.model.SongModel;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class  myTunesController implements Initializable {
+
+    private SongModel sM = new SongModel();
 
     @FXML
     private Button deleteSong;
@@ -57,6 +60,7 @@ public class  myTunesController implements Initializable {
     }
 
     public void clickedMusicPlayPause(){
+        sM.playSong();
         System.out.println("musicPlayPause is working");
         //TODO
     }
