@@ -16,7 +16,7 @@ public class LogicFacade {
     }
 
     public void playSong() {
-        File file = new File("C:/Users/Svend Halding/Desktop/New folder/songs/Black.mp3");
+        File file = new File("./myTunes2020/src/music/Home.mp3");
         String filePath = file.toURI().toString();
         Media media = new Media(filePath);
         mediaPlayer = new MediaPlayer(media);
