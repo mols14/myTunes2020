@@ -59,16 +59,16 @@ public class  myTunesController implements Initializable {
 
     }
 
-    public void clickedMusicPlayPause(){
+    public void handleMusicPlayPause(){
         sM.playSong();
         System.out.println("musicPlayPause is working");
         //TODO
     }
-    public void clickedMusicRewind(){
+    public void handleMusicRewind(){
         System.out.println("musicRewind is working");
         //TODO
     }
-    public void clickedMusicForward(){
+    public void handleMusicForward(){
         System.out.println("musicForward is working");
         //TODO
     }
@@ -76,48 +76,48 @@ public class  myTunesController implements Initializable {
         System.out.println("VolumeSlider is working");
         //TODO
     }
-    public void inputSearchField(){
-        System.out.println("SearchField is working");
+    public void handleSearchInput(){
+        System.out.println("SearchInput is working");
         //TODO
     }
 
-    public void clickedEditPlaylist(){
+    public void handleEditPlaylist(){
         System.out.println("EditPlaylist is working");
         //TODO
     }
-    public void clickedDeletePlaylist(){
+    public void handleDeletePlaylist(){
         System.out.println("DeletePlaylist is working");
         //TODO
     }
-    public void clickedMoveSongDown(){
+    public void handleMoveSongDown(){
         System.out.println("MoveSongDown is working");
         //TODO
     }
-    public void clickedMoveSongUp(){
+    public void handleMoveSongUp(){
         System.out.println("MoveSongUp is working");
         //TODO
     }
-    public void clickedDeleteSongOnPL(){
+    public void handleDeleteSongOnPL(){
         System.out.println("DeleteSongOnPL is working");
         //TODO
     }
-    public void clickedCloseApp(){
+    public void handleCloseApp(){
         System.out.println("CloseApp is working");
         //TODO
     }
-    public void clickedEditSong(){
+    public void handleEditSong(){
         System.out.println("editSong is working");
         //TODO
     }
-    public void clickedDeleteSong(){
+    public void handleDeleteSong(){
         System.out.println("DeleteSong is working");
         //TODO
     }
-    public void clickedSearchButton(){
+    public void handleSearchButton(){
         System.out.println("SearchButton is working");
         //TODO
     }
-    public void clickedMoveSongToPL(){
+    public void handleMoveSongToPL(){
         System.out.println("MoveSongToPL is working");
         //TODO
     }
