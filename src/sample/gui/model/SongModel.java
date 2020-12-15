@@ -1,6 +1,6 @@
 package sample.gui.model;
 
-import sample.bll.util.LogicFacade;
+import sample.bll.LogicFacade;
 
 public class SongModel {
 

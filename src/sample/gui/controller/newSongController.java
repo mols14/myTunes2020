@@ -46,22 +46,22 @@ public class newSongController implements Initializable {
 
     }
     public void clickedFileSOngPathChooseBN(){
-<<<<<<< Updated upstream
         sM.addSongFromPath();
         System.out.println("FileSongPathChooseBN  is working");
         //TODO
-=======
+
         String filepath;
         FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(null);
         filepath = file.toURI().toString();
         System.out.println(filepath);
->>>>>>> Stashed changes
     }
+
     public void clickedMoreCategoryBN(){
         System.out.println("MoreCategoryBN is working");
         //TODO
     }
+
     public void clickedNewSongCancel(javafx.event.ActionEvent event) throws IOException {
         Parent Playlist = FXMLLoader.load(getClass().getResource("/sample/gui/view/myTunes.fxml"));
         Scene NewPlaylist = new Scene(Playlist); // Opretter den nye scene
@@ -69,6 +69,7 @@ public class newSongController implements Initializable {
         mainWindowStage.setScene(NewPlaylist); // Vælger den nyoprettede scene
         mainWindowStage.show(); // Viser den nye scene
     }
+
     public void clickedSaveSong(){
         System.out.println("Save Button is working");
         //TODO

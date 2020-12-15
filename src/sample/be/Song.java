@@ -16,11 +16,8 @@ public class Song {
         this.artist = new SimpleStringProperty(artist);
         this.id = id;
         this.duration = duration;
-<<<<<<< Updated upstream
-        // TO DO opret genre
-=======
         this.url = url;
->>>>>>> Stashed changes
+
     }
 
     /**
