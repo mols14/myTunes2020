@@ -24,7 +24,7 @@ public class LogicFacade {
             isPlaying = true;
         }
         else if (!isPlaying) {
-            File file = new File("./myTunes2020/src/music/Home.mp3");
+            File file = new File("./src/music/Home.mp3");
             String filePath = file.toURI().toString();
             Media media = new Media(filePath);
             mediaPlayer = new MediaPlayer(media);

@@ -3,12 +3,13 @@ package sample.bll.util;
 import sample.be.Song;
 import sample.dal.file.SongDAO;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class myTunesManager {
     private SongDAO songDAO;
 
-    public myTunesManager() {
+    public myTunesManager() throws IOException {
         songDAO = new SongDAO();
     }
 
