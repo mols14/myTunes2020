@@ -9,9 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.gui.model.SongModel;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,9 +46,17 @@ public class newSongController implements Initializable {
 
     }
     public void clickedFileSOngPathChooseBN(){
+<<<<<<< Updated upstream
         sM.addSongFromPath();
         System.out.println("FileSongPathChooseBN  is working");
         //TODO
+=======
+        String filepath;
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(null);
+        filepath = file.toURI().toString();
+        System.out.println(filepath);
+>>>>>>> Stashed changes
     }
     public void clickedMoreCategoryBN(){
         System.out.println("MoreCategoryBN is working");

@@ -5,17 +5,22 @@ import javafx.beans.property.StringProperty;
 
 public class Song {
 
+    private final String url;
     private StringProperty title;
     private StringProperty artist;
     private final int id;
     private final float duration;
 
-    public Song(String title, String artist, int id, float duration) {
+    public Song(int id, String title, String artist, float duration, String url) {
         this.title = new SimpleStringProperty(title);
         this.artist = new SimpleStringProperty(artist);
         this.id = id;
         this.duration = duration;
+<<<<<<< Updated upstream
         // TO DO opret genre
+=======
+        this.url = url;
+>>>>>>> Stashed changes
     }
 
     /**
