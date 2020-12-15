@@ -10,12 +10,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.gui.model.SongModel;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class newSongController implements Initializable {
+
+    private SongModel sM = new SongModel();
 
     @FXML
     private SplitMenuButton categoryFolder;
@@ -41,6 +44,7 @@ public class newSongController implements Initializable {
 
     }
     public void clickedFileSOngPathChooseBN(){
+        sM.addSongFromPath();
         System.out.println("FileSongPathChooseBN  is working");
         //TODO
     }

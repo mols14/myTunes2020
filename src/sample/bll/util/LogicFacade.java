@@ -2,6 +2,7 @@ package sample.bll.util;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.FileChooser;
 
 import java.io.File;
 
@@ -12,7 +13,7 @@ public class LogicFacade {
     private MediaPlayer mediaPlayer;
 
     private boolean isPlaying = false;
-    private boolean isPause = true;
+    private String addSongPath;
 
     public MediaPlayer getMediaPlayer() {
         return mediaPlayer;
@@ -35,5 +36,13 @@ public class LogicFacade {
             isPlaying = false;
         }
 
+    }
+
+    public void chooseSongToAdd() {
+        String filepath;
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(null);
+        filepath = file.toURI().toString();
+        System.out.println(filepath);
     }
 }

@@ -9,4 +9,7 @@ public class SongModel {
     public void playSong(){
        lF.playSong();
     }
+
+    public void addSongFromPath() {
+        lF.chooseSongToAdd();}
 }
