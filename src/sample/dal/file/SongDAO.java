@@ -4,6 +4,8 @@ import sample.be.Song;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SongDAO {
 
@@ -14,10 +16,8 @@ public class SongDAO {
         connectionPool = JDBCConnectionPool.getInstance();
     }
 
+    public List<Song> getAllSongs() throws IOException{
 
-<<<<<<< Updated upstream
-    public Song createSong(String title, String artist, float time) throws SQLException
-=======
         ArrayList<Song> allSongs = new ArrayList<>();
 
         try (Connection connection = connectionPool.checkOut()) {
@@ -31,25 +31,22 @@ public class SongDAO {
                     String artist = resultSet.getString("artist");
                     int duration = resultSet.getInt("duration");
                     String url = resultSet.getString("path");
-                    Song song = new Song(id, title, artist, duration, url);
-                    allSongs.add(song);
                 }
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return allSongs;
     }
     public Song createSong(String title, String artist, float duration, String url) throws SQLException
->>>>>>> Stashed changes
     {
-        String sql = "INSERT INTO Song (title, artist, time) VALUES(?,?,?);";
+        String sql = "INSERT INTO Song (title, artist, time, url) VALUES(?,?,?,?);";
         Connection con = connectionPool.checkOut(); // <<< Using the object pool here <<<
         try (PreparedStatement st = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
         {
             st.setString(1, title);
             st.setString(2, artist);
-            st.setFloat(3, time);
+            st.setFloat(3, duration);
+            st.setString(4, url);
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
             int id = 0;
@@ -57,11 +54,7 @@ public class SongDAO {
             {
                 id = rs.getInt(1);
             }
-<<<<<<< Updated upstream
-            Song song = new Song(title,artist,id,time);
-=======
-            Song song = new Song(id, title, artist, duration, url);
->>>>>>> Stashed changes
+            Song song = new Song(title,artist,id,duration);
             return song;
         } catch (SQLException ex)
         {
