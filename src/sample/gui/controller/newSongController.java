@@ -75,6 +75,6 @@ public class newSongController implements Initializable {
     public void clickedSaveSong() throws IOException, SQLException {
         System.out.println("Save Button is working");
         MyTunesManager myTunesManager = new MyTunesManager();
-        myTunesManager.createSong(titleSongInput.getText(),artistSongInput.getText(), Float.parseFloat(timeSongInput.getText()),fileSongPathChooseButton.getText());
+        myTunesManager.createSong(titleSongInput.getText(),artistSongInput.getText(), Float.parseFloat(timeSongInput.getText()),songFilePathInput.getText());
     }
 }
