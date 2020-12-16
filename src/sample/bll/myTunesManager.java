@@ -7,6 +7,7 @@ import sample.dal.SongDAO;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class MyTunesManager {
     private SongDAO songDAO;
@@ -25,4 +26,7 @@ public class MyTunesManager {
         return playListDAO.createPlaylist(title);
     }
 
+    public List<Song> getAllSongs() throws IOException {
+        return songDAO.getAllSongs();
+    }
 }

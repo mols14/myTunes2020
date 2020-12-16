@@ -1,5 +1,6 @@
 package sample.gui.controller;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,19 +8,26 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import sample.be.Song;
 import sample.gui.model.SongModel;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class  myTunesController implements Initializable {
+public class MyTunesController implements Initializable {
 
-    private SongModel sM = new SongModel();
+    public TableView<Song> tableViewSongs;
+    public TableColumn<Float,Song> songDurationCol;
+    public TableColumn<String, Song> songCatCol;
+    public TableColumn<String, Song> songArtistCol;
+    public TableColumn<String, Song> songTitleCol;
+    private ObservableList observableListSongs;
+    private SongModel songModel;
+
 
     @FXML
     private Button deleteSong;
@@ -44,7 +52,7 @@ public class  myTunesController implements Initializable {
     @FXML
     private Slider volumeSlider;
     @FXML
-    private TextField displaySong; // er denne behøver vel ikke en methode ?
+    private TextField displaySong;
     @FXML
     private TextField searchField;
     @FXML
@@ -53,16 +61,30 @@ public class  myTunesController implements Initializable {
     private Button musicRewind;
     @FXML
     private Button musicForward;
+    
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            observableListSongs = songModel.getSongs();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        songTitleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        songArtistCol.setCellValueFactory(new PropertyValueFactory<>("artist"));
+        songCatCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        songDurationCol.setCellValueFactory(new PropertyValueFactory<>("duration"));
+        tableViewSongs.setItems(observableListSongs);
+    }
+
+    public MyTunesController() throws IOException {
+        tableViewSongs = new TableView<>();
+        songModel = new SongModel();
 
     }
 
     public void handleMusicPlayPause(){
-        sM.playSong();
-        System.out.println("musicPlayPause is working");
-        //TODO
+        songModel.playSong();
     }
     public void handleMusicRewind(){
         System.out.println("musicRewind is working");

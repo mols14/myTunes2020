@@ -21,7 +21,7 @@ public class SongDAO {
         ArrayList<Song> allSongs = new ArrayList<>();
 
         try (Connection connection = connectionPool.checkOut()) {
-            String sql = "INSERT INTO Song (title, artist, duration, url) VALUES(?,?,?,?);";
+            String sql = "SELECT * FROM Song;";
             Statement statement = connection.createStatement();
             if (statement.execute(sql)) {
                 ResultSet resultSet = statement.getResultSet();
@@ -29,14 +29,14 @@ public class SongDAO {
                     int id = resultSet.getInt("id");
                     String title = resultSet.getString("title");
                     String artist = resultSet.getString("artist");
-                    int duration = resultSet.getInt("duration");
-                    String url = resultSet.getString("path");
+                    float duration = resultSet.getFloat("duration");
+                    String url = resultSet.getString("url");
                     Song song = new Song(id, title, artist, duration, url);
                     allSongs.add(song);
                 }
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         return allSongs;
     }
