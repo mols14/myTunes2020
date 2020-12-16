@@ -9,9 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.bll.MyTunesManager;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class NewPlaylistController implements Initializable {
@@ -28,9 +30,10 @@ public class NewPlaylistController implements Initializable {
 
     }
 
-    public void clickedSavePL(){
+    public void clickedSavePL() throws IOException, SQLException {
         System.out.println("Save Button is working");
-        //TODO
+        MyTunesManager myTunesManager = new MyTunesManager();
+        myTunesManager.createPlaylist(nameInputField.getText());
     }
     public void clickedCancelPL(javafx.event.ActionEvent event) throws IOException {
         Parent Playlist = FXMLLoader.load(getClass().getResource("/sample/gui/view/myTunes.fxml"));
