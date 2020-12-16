@@ -11,11 +11,13 @@ import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import sample.bll.MyTunesManager;
 import sample.gui.model.SongModel;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class newSongController implements Initializable {
@@ -70,8 +72,9 @@ public class newSongController implements Initializable {
         mainWindowStage.show(); // Viser den nye scene
     }
 
-    public void clickedSaveSong(){
+    public void clickedSaveSong() throws IOException, SQLException {
         System.out.println("Save Button is working");
-        //TODO
+        MyTunesManager myTunesManager = new MyTunesManager();
+        myTunesManager.createSong(titleSongInput.getText(),artistSongInput.getText(), Float.parseFloat(timeSongInput.getText()),fileSongPathChooseButton.getText());
     }
 }

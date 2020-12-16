@@ -6,10 +6,10 @@ import sample.dal.SongDAO;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class myTunesManager {
+public class MyTunesManager {
     private SongDAO songDAO;
 
-    public myTunesManager() throws IOException {
+    public MyTunesManager() throws IOException {
         songDAO = new SongDAO();
     }
 
