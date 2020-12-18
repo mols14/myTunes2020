@@ -10,10 +10,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import sample.be.Song;
+import sample.bll.exception.MyTunesException;
 import sample.gui.model.SongModel;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,47 +27,20 @@ import java.util.ResourceBundle;
 public class MyTunesController implements Initializable {
 
     public TableView<Song> tableViewSongs;
-    public TableColumn<Float,Song> songDurationCol;
+    public TableColumn<Integer,Song> songDurationCol;
     public TableColumn<String, Song> songCatCol;
     public TableColumn<String, Song> songArtistCol;
     public TableColumn<String, Song> songTitleCol;
+    public TextField filterSearch;
     private ObservableList observableListSongs;
     private SongModel songModel;
+    private MediaPlayer mediaPlayer;
+    private String songsPath = "music/";
+    private Boolean isPlaying = false;
+    private Boolean isLoaded = false;
+    private Song selectedSong;
+    private Media media;
 
-
-    @FXML
-    private Button deleteSong;
-    @FXML
-    private Button editSong;
-    @FXML
-    private Button newSong;
-    @FXML
-    private Button closeApp;
-    @FXML
-    private Button deleteSongOnPL;
-    @FXML
-    private Button moveSongUp;
-    @FXML
-    private Button moveSongDown;
-    @FXML
-    private Button deletePlaylist;
-    @FXML
-    private Button editPlaylist;
-    @FXML
-    private Button newPlaylist;
-    @FXML
-    private Slider volumeSlider;
-    @FXML
-    private TextField displaySong;
-    @FXML
-    private TextField searchField;
-    @FXML
-    private Button musicPlayPause;
-    @FXML
-    private Button musicRewind;
-    @FXML
-    private Button musicForward;
-    
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -84,8 +63,31 @@ public class MyTunesController implements Initializable {
     }
 
     public void handleMusicPlayPause(){
-        songModel.playSong();
+        selectedSong = tableViewSongs.getSelectionModel().getSelectedItem();
+        media = new Media(new File(songsPath + selectedSong.getUrl()).toURI().toString());
+
+        if (selectedSong != null && !isPlaying) {
+            try {
+                mediaPlayer = new MediaPlayer(media);
+                mediaPlayer.play();
+                isPlaying = true;
+
+
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        }
+        else if (selectedSong != null && isPlaying){
+            mediaPlayer.pause();
+            isPlaying = false;
+        } else if(selectedSong != null && !isPlaying){
+            mediaPlayer.play();
+            isPlaying = true;
+        }
     }
+
+
     public void handleMusicRewind(){
         System.out.println("musicRewind is working");
         //TODO
@@ -102,7 +104,6 @@ public class MyTunesController implements Initializable {
         System.out.println("SearchInput is working");
         //TODO
     }
-
     public void handleEditPlaylist(){
         System.out.println("EditPlaylist is working");
         //TODO
@@ -160,4 +161,17 @@ public class MyTunesController implements Initializable {
         mainWindowStage.setScene(newSong); // Vælger den nyoprettede scene
         mainWindowStage.show(); // Viser den nye scene
     }
+
+    public void handleFilterSearch(KeyEvent keyEvent) throws IOException {
+        if (filterSearch.getText() == null || filterSearch.getText().length() <= 0) {
+            tableViewSongs.setItems(songModel.getSongs());
+        } else {
+            ObservableList<Song> foundMovieList = songModel.filter(songModel.getSongs(), filterSearch.getText());
+
+            tableViewSongs.setItems(foundMovieList);
+
+        }
+    }
+
+
 }

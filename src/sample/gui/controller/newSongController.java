@@ -74,7 +74,7 @@ public class NewSongController implements Initializable {
     }
 
     public void clickedSaveSong(ActionEvent actionEvent) throws IOException, SQLException {
-       songModel.createSong(titleSongInput.getText(),artistSongInput.getText(), Float.parseFloat(timeSongInput.getText()),songFilePathInput.getText());
+       songModel.createSong(titleSongInput.getText(),artistSongInput.getText(), Integer.parseInt(timeSongInput.getText()),songFilePathInput.getText());
         clickedNewSongCancel(actionEvent);
     }
 

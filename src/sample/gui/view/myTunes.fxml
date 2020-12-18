@@ -46,8 +46,7 @@
       <Text layoutX="211.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs on Playlists" />
       <Text layoutX="382.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs" />
       <Text layoutX="466.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter" />
-      <TextField layoutX="500.0" layoutY="29.0" prefHeight="25.0" prefWidth="112.0" />
-      <Button layoutX="626.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="25.0" prefWidth="30.0" text="🔍" />
+      <TextField fx:id="filterSearch" layoutX="500.0" layoutY="29.0" onKeyReleased="#handleFilterSearch" prefHeight="25.0" prefWidth="112.0" />
       <Button fx:id="musicPlayPause" layoutX="91.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleMusicPlayPause" prefHeight="25.0" prefWidth="32.0" text="⏯" />
       <Button fx:id="musicRewind" layoutX="55.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleMusicRewind" prefHeight="17.0" prefWidth="30.0" text="⏪" />
       <Button fx:id="musicForward" layoutX="134.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleMusicForward" prefHeight="25.0" prefWidth="30.0" text="⏩" />

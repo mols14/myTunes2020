@@ -18,26 +18,6 @@ public class LogicFacade {
         return mediaPlayer;
     }
 
-    public void playSong() {
-        if(!isPlaying && this.mediaPlayer != null){
-            mediaPlayer.play();
-            isPlaying = true;
-        }
-        else if (!isPlaying) {
-            File file = new File("music/Resonance.mp3");
-            String filePath = file.toURI().toString();
-            Media media = new Media(filePath);
-            mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.play();
-            isPlaying = true;
-        }
-        else if(isPlaying){
-            mediaPlayer.pause();
-            isPlaying = false;
-        }
-
-    }
-
     public void chooseSongToAdd() {
     }
 }

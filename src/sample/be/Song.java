@@ -9,15 +9,20 @@ public class Song {
     private StringProperty title;
     private StringProperty artist;
     private final int id;
-    private final float duration;
+    private final int duration;
 
-    public Song(int id, String title, String artist, float duration, String url) {
+
+    public Song(int id, String title, String artist, int duration, String url) {
         this.title = new SimpleStringProperty(title);
         this.artist = new SimpleStringProperty(artist);
         this.id = id;
         this.duration = duration;
         this.url = url;
 
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     /**
@@ -59,7 +64,7 @@ public class Song {
      *
      * @return
      */
-    public float getDuration() {
+    public int getDuration() {
         return duration;
     }
 }

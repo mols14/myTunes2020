@@ -8,6 +8,7 @@ import sample.bll.MyTunesManager;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class SongModel {
 
@@ -25,14 +26,16 @@ public class SongModel {
         return allSongs;
     }
 
-    public void createSong(String title, String artist, float duration, String url) throws SQLException {
+    public void createSong(String title, String artist, int duration, String url) throws SQLException {
         myTunesManager.createSong(title, artist, duration, url);
     }
 
     public void playSong(){
-       lF.playSong();
     }
 
+    public ObservableList<Song> filter(List<Song> searchBase, String query ) {
+        return myTunesManager.filter((ObservableList<Song>) searchBase, query);
+    }
     public void addSongFromPath() {
         lF.chooseSongToAdd();}
 }

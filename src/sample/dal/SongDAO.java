@@ -29,7 +29,7 @@ public class SongDAO {
                     int id = resultSet.getInt("id");
                     String title = resultSet.getString("title");
                     String artist = resultSet.getString("artist");
-                    float duration = resultSet.getFloat("duration");
+                    int duration = resultSet.getInt("duration");
                     String url = resultSet.getString("url");
                     Song song = new Song(id, title, artist, duration, url);
                     allSongs.add(song);
@@ -41,14 +41,14 @@ public class SongDAO {
         return allSongs;
     }
 
-    public Song createSong(String title, String artist, float duration, String url) throws SQLException {
+    public Song createSong(String title, String artist, int duration, String url) throws SQLException {
         String sql = "INSERT INTO Song (title, artist, duration, url) VALUES(?,?,?,?);";
         Connection con = connectionPool.checkOut(); // <<< Using the object pool here <<<
         try (PreparedStatement st = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
         {
             st.setString(1, title);
             st.setString(2, artist);
-            st.setFloat(3, duration);
+            st.setInt(3, duration);
             st.setString(4, url);
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
